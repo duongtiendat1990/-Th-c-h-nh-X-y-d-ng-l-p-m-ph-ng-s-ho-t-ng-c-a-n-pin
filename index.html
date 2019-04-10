@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flash Light</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><p id="Status">OFF</p></td>
+        <td><button type="button" id="Power" style="width: 100%" onclick="flash.power();Status.innerHTML = flash.status;energyRemain.innerHTML = flash.battery.getEnergy()">Power</button></td>
+    </tr>
+    <tr>
+        <td><p id="energyRemain">100</p></td>
+        <td><input type="number" min="0" max="100" oninput="flash.battery.setEnergy(this.value);document.getElementById('engergyRemain').innerHTML = flash.battery.getEnergy()"></td>
+    </tr>
+    <tr>
+        <td><p id="lightStatus"></p></td>
+        <button type="button" id="lightning" onclick="lightStatus.innerHTML = flash.light();energyRemain.innerHTML = flash.battery.getEnergy()">Light Up</button>
+    </tr>
+</table>
+<script src="script.js"></script>
+</body>
+</html>
